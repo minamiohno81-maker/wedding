@@ -18,51 +18,9 @@
       align-items: center;
       background: linear-gradient(180deg, #faf7f3, #f3efe9);
       font-family: "Noto Serif JP", serif;
-      overflow: hidden;
     }
 
-    /* ===== クラッカー紙吹雪 ===== */
-    .confetti-container {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .confetti {
-      position: absolute;
-      width: 8px;
-      height: 14px;
-      opacity: 0.9;
-    }
-
-    @keyframes pop-left {
-      0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(320px, -520px) rotate(260deg);
-        opacity: 0;
-      }
-    }
-
-    @keyframes pop-right {
-      0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-320px, -520px) rotate(-260deg);
-        opacity: 0;
-      }
-    }
-
-    /* ===== カード ===== */
     .card {
-      position: relative;
-      z-index: 2;
       background: #ffffff;
       width: 90%;
       max-width: 340px;
@@ -97,10 +55,6 @@
 </head>
 
 <body>
-  <!-- 紙吹雪 -->
-  <div class="confetti-container"></div>
-
-  <!-- メッセージカード -->
   <div class="card">
     <div class="welcome">Congratulations!</div>
     <p class="brown">
@@ -113,42 +67,6 @@
       <span class="gold">Eat, drink, and be merry!</span>
     </p>
   </div>
-
-  <!-- クラッカー紙吹雪JS -->
-  <script>
-    const colors = ["#c9a063", "#e6d3a3", "#8b5a2b"];
-
-    function launchConfetti() {
-      const container = document.querySelector(".confetti-container");
-
-      for (let i = 0; i < 24; i++) {
-        // 左クラッカー
-        const left = document.createElement("div");
-        left.className = "confetti";
-        left.style.left = "6vw";
-        left.style.bottom = "0";
-        left.style.backgroundColor =
-          colors[Math.floor(Math.random() * colors.length)];
-        left.style.animation = "pop-left 2.6s ease-out forwards";
-        left.style.animationDelay = Math.random() * 0.25 + "s";
-        container.appendChild(left);
-
-        // 右クラッカー
-        const right = document.createElement("div");
-        right.className = "confetti";
-        right.style.right = "6vw";
-        right.style.bottom = "0";
-        right.style.backgroundColor =
-          colors[Math.floor(Math.random() * colors.length)];
-        right.style.animation = "pop-right 2.6s ease-out forwards";
-        right.style.animationDelay = Math.random() * 0.25 + "s";
-        container.appendChild(right);
-      }
-    }
-
-    // ページ表示時に一度だけ実行
-    launchConfetti();
-  </script>
 </body>
 </html>
 
