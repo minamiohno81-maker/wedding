@@ -5,7 +5,6 @@
   <title>Welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
 
@@ -19,7 +18,6 @@
       background: linear-gradient(180deg, #faf7f3, #f3efe9);
       font-family: "Noto Serif JP", serif;
     }
-
     .card {
       background: #ffffff;
       width: 90%;
@@ -29,39 +27,30 @@
       text-align: center;
       box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     }
-
     .welcome {
       font-family: 'Great Vibes', cursive;
       font-size: 38px;
       color: #c9a063;
-      margin-bottom: 8px;
     }
-
     .en-sub {
       font-size: 11px;
       letter-spacing: 0.35em;
       color: #bbb;
       margin-bottom: 24px;
     }
-
     h1 {
       font-size: 16px;
       font-weight: 300;
       letter-spacing: 0.15em;
       margin-bottom: 28px;
-      color: #333;
     }
-
     input {
       width: 100%;
       padding: 14px;
-      font-size: 16px;
       border-radius: 10px;
       border: 1px solid #ddd;
       margin-bottom: 22px;
-      box-sizing: border-box;
     }
-
     button {
       width: 100%;
       padding: 14px;
@@ -69,20 +58,8 @@
       border: none;
       background: #c9a063;
       color: #fff;
-      font-size: 14px;
       letter-spacing: 0.2em;
       cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .note {
-      margin-top: 20px;
-      font-size: 11px;
-      color: #aaa;
-      line-height: 1.6;
     }
   </style>
 </head>
@@ -94,30 +71,21 @@
 
     <h1>新郎からのメッセージは<br>なんでしょう？？</h1>
 
-    <input type="text" id="answer" placeholder="ここに入力">
+    <input type="text" id="answer">
     <button type="button" onclick="checkAnswer()">ENTER</button>
-
-    <div class="note">
-      ヒントは招待状です！
-    </div>
   </div>
 
   <script>
-     function checkAnswer() {
-    const correctWord = "これからもよろしく";
-    const input = document.getElementById("answer").value.trim();
+    function checkAnswer() {
+      const correctWord = "これからもよろしく";
+      const input = document.getElementById("answer").value.trim();
 
-    if (input === "") {
-      window.location.href = "./wrong.html";
-      return;
+      if (input === correctWord) {
+        window.location.href = "correct.html";
+      } else {
+        window.location.href = "wrong.html";
+      }
     }
-
-    if (input === correctWord) {
-      window.location.href = "./correct.html";
-    } else {
-      window.location.href = "./wrong.html";
-    }
-  }
   </script>
 </body>
 </html>
