@@ -2,9 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome</title>
+  <title>Congratulations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
 
@@ -17,10 +18,43 @@
       align-items: center;
       background: linear-gradient(180deg, #faf7f3, #f3efe9);
       font-family: "Noto Serif JP", serif;
+      overflow: hidden;
     }
 
+    /* ===== 紙吹雪 ===== */
+    .confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      opacity: 0.85;
+      animation: confetti-fall 8s ease-out forwards;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(180deg);
+      }
+    }
+
+    /* ===== カード ===== */
     .card {
-      background: #fff;
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
       width: 90%;
       max-width: 340px;
       padding: 44px 28px;
@@ -41,20 +75,59 @@
       line-height: 1.9;
       color: #333;
     }
+
+    .brown {
+      color: #5a3a22;
+    }
+
+    .gold {
+      color: #c9a063;
+      font-weight: 500;
+    }
   </style>
 </head>
 
 <body>
+  <!-- 紙吹雪 -->
+  <div class="confetti-container"></div>
+
+  <!-- メッセージカード -->
   <div class="card">
     <div class="welcome">Congratulations!</div>
-    <p><span style="color:#5a3a22;">
+    <p class="brown">
       大正解です！<br>
-      ささやかな景品がありますので<br>ぜひ新郎新婦までこの画面をみせてください！<br><br>
-      
-      本日はどうぞごゆっくりお過ごしください。<br><br></span>
-      <strong><span style="color:#c9a063;">Eat, drink, and be merry!</span></strong>
+      ささやかな景品がありますので<br>
+      ぜひ新郎新婦までこの画面をみせてください！<br><br>
+
+      本日はどうぞごゆっくりお過ごしください。<br><br>
+
+      <span class="gold">Eat, drink, and be merry!</span>
     </p>
   </div>
+
+  <!-- 紙吹雪スクリプト -->
+  <script>
+    const colors = ["#c9a063", "#e6d3a3", "#8b5a2b"];
+
+    function launchConfetti() {
+      const container = document.querySelector(".confetti-container");
+
+      for (let i = 0; i < 22; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor =
+          colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 1.5 + "s";
+
+        container.appendChild(confetti);
+      }
+    }
+
+    // ページ表示時に一度だけ実行
+    launchConfetti();
+  </script>
 </body>
 </html>
 
