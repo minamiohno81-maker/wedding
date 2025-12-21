@@ -104,11 +104,24 @@
 
   <script>
      function checkAnswer() {
-    alert("反応しています！");
+    const correctWord = "これからもよろしく";
+    const input = document.getElementById("answer").value.trim();
+
+    if (input === "") {
+      window.location.href = "./wrong.html";
+      return;
+    }
+
+    if (input === correctWord) {
+      window.location.href = "./correct.html";
+    } else {
+      window.location.href = "./wrong.html";
+    }
   }
   </script>
 </body>
 </html>
+
 
 
 
