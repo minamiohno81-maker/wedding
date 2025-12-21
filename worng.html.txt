@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>もう一度</title>
+</head>
+<body>
+  <h1>もう一度チャレンジ！</h1>
+  <p>
+    ちょっと違うかも？<br>
+    招待状をヒントにしてみてください。
+  </p>
+</body>
+</html>

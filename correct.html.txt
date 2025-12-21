@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>正解</title>
+</head>
+<body>
+  <h1>🎉 正解です 🎉</h1>
+  <p>
+    景品があるので、この画面を新郎新婦に見せてね！<br>
+    Eat, drink, and be merry!
+  </p>
+</body>
+</html>

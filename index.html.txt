@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>合言葉入力</title>
+</head>
+<body>
+  <h2>新郎からのメッセージを入力してください</h2>
+
+  <input type="text" id="answer" placeholder="ここに入力">
+  <button onclick="checkAnswer()">送信</button>
+
+  <script>
+    function checkAnswer() {
+      const correctWord = "これからもよろしく"; // ←あなたの合言葉
+      const input = document.getElementById("answer").value;
+
+      if (input.trim() === correctWord) {
+        window.location.href = "correct.html";
+      } else {
+        window.location.href = "wrong.html";
+      }
+    }
+  </script>
+</body>
+</html>
