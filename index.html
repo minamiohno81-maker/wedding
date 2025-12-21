@@ -105,15 +105,21 @@
   <script>
     function checkAnswer() {
       const correctWord = "これからもよろしく"; // ←合言葉を入れる
-      const input = document.getElementById("answer").value;
+      const input = document.getElementById("answer").value.trim();
+
+    if (input === "") {
+      window.location.href = "./wrong.html";
+      return;
+    }
 
       if (input.trim().toLowerCase() === correctWord.toLowerCase()) {
-        window.location.href = "correct.html";
+        window.location.href = "./correct.html";
       } else {
-        window.location.href = "wrong.html";
+        window.location.href = "./wrong.html";
       }
     }
   </script>
 </body>
 </html>
+
 
