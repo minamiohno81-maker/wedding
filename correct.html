@@ -43,7 +43,7 @@
         opacity: 1;
       }
       100% {
-        transform: translate(220px, -420px) rotate(220deg);
+        transform: translate(320px, -520px) rotate(260deg);
         opacity: 0;
       }
     }
@@ -54,7 +54,7 @@
         opacity: 1;
       }
       100% {
-        transform: translate(-220px, -420px) rotate(-220deg);
+        transform: translate(-320px, -520px) rotate(-260deg);
         opacity: 0;
       }
     }
@@ -121,27 +121,27 @@
     function launchConfetti() {
       const container = document.querySelector(".confetti-container");
 
-      for (let i = 0; i < 14; i++) {
+      for (let i = 0; i < 24; i++) {
         // 左クラッカー
         const left = document.createElement("div");
         left.className = "confetti";
-        left.style.left = "8vw";
+        left.style.left = "6vw";
         left.style.bottom = "0";
         left.style.backgroundColor =
           colors[Math.floor(Math.random() * colors.length)];
-        left.style.animation = "pop-left 2.2s ease-out forwards";
-        left.style.animationDelay = Math.random() * 0.2 + "s";
+        left.style.animation = "pop-left 2.6s ease-out forwards";
+        left.style.animationDelay = Math.random() * 0.25 + "s";
         container.appendChild(left);
 
         // 右クラッカー
         const right = document.createElement("div");
         right.className = "confetti";
-        right.style.right = "8vw";
+        right.style.right = "6vw";
         right.style.bottom = "0";
         right.style.backgroundColor =
           colors[Math.floor(Math.random() * colors.length)];
-        right.style.animation = "pop-right 2.2s ease-out forwards";
-        right.style.animationDelay = Math.random() * 0.2 + "s";
+        right.style.animation = "pop-right 2.6s ease-out forwards";
+        right.style.animationDelay = Math.random() * 0.25 + "s";
         container.appendChild(right);
       }
     }
