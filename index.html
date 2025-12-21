@@ -94,17 +94,17 @@
 
     <h1>合言葉をご入力ください</h1>
 
-    <input type="text" id="answer" placeholder="合言葉">
+    <input type="text" id="answer" placeholder="ここに入力">
     <button onclick="checkAnswer()">ENTER</button>
 
     <div class="note">
-      席次表やメニューをヒントにしてみてください
+      ヒントは招待状です！
     </div>
   </div>
 
   <script>
     function checkAnswer() {
-      const correctWord = "合言葉をここに"; // ←合言葉を入れる
+      const correctWord = "これからもよろしく"; // ←合言葉を入れる
       const input = document.getElementById("answer").value;
 
       if (input.trim().toLowerCase() === correctWord.toLowerCase()) {
@@ -116,3 +116,4 @@
   </script>
 </body>
 </html>
+
